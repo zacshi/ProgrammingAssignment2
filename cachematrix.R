@@ -1,5 +1,4 @@
-## My function "makeCacheMatrix" creates a special "matrix" object,  
-## that can cache its inverse.
+## "makeCacheMatrix" creates a special "matrix" object that caches its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
         ## initiate an empty matrix to hold output from solve function.
@@ -13,19 +12,18 @@ makeCacheMatrix <- function(x = matrix()) {
         setMa <- function(solve) ma <<- solve
         getMa <- function() ma
         ## To put the above 4 functions availale as a list object
-        list(set = set, get = get, 
+        list(set = set, 
+             get = get, 
              setMa = setMa,
              getMa = getMa)
 }
 
 
-## Next function "cacheSolve" computes the inverse of the special "matrix" returned 
-## by makeCacheMatrix above. If the inverse has already been calculated (and the 
-## matrix has not changed), then the cachesolve should retrieve the inverse from 
-## the cache.
+## "cacheSolve" computes the inverse of the special "matrix" returned by makeCacheMatrix
+## above. If the inverse has already been calculated (and the matrix has not changed), 
+## then the cachesolve should retrieve the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
-        ## add something here
         ma <- x$getMa()
         ## to find out if the same object available in the cache, display a message
         ## saying that and returned the cached value.
@@ -41,4 +39,3 @@ cacheSolve <- function(x, ...) {
         ma
 }
 
-## Thanks for grading!! 
