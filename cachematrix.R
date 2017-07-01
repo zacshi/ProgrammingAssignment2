@@ -2,7 +2,7 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         ## initiate an empty matrix to hold output from solve function.
-        ma <- matrix(NULL)
+        ma <- NULL
         ## define 4 founctions and send objects into global enviroment with "<<-"
         set <- function(y) {
                 x <<- y
